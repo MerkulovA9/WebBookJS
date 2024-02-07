@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="​Функции в JavaScript, ​Параметры функций, ​Значения, возвращаемые из функций, ​Вложенные функции, ​Методы объектов, ​Ключевое слово this, ​Немедленно вызываемые функциональные выражения, ​Поднятие функций, ​Стрелочные функции, ​Неявный возврат результатов работы функции, ​Ключевое слово this и стрелочные функции, ​Замыкания">
+    <meta name="description" content="">
+    <title>Страница 5</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Страница-5.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 6.4.0, nicepage.com">
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/gJhXIJosAQo.jpg"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Страница 5">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru"><header class="u-clearfix u-header" id="sec-0bf4"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="Главная.html" class="u-image u-logo u-image-1" data-image-width="1562" data-image-height="1549" title="Главная">
+          <img src="images/gJhXIJosAQo.jpg" class="u-logo-image u-logo-image-1">
+        </a>
+        <p class="u-text u-text-default u-text-1">WEB-Учебник по Java Script </p>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-5e2f">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-1"> Функции в JavaScript</h2>
+        <p class="u-align-center u-text u-text-default u-text-2"> Поговорим о функциях в JavaScript, сделаем их общий обзор и рассмотрим подробности о них, знание которых позволит вам эффективно ими пользоваться.<br>
+          <span style="font-weight: 700;">Функция</span> — это самостоятельный блок кода, который можно, один раз объявив, вызывать столько раз, сколько нужно. Функция может, хотя это и необязательно, принимать параметры. Функции возвращают единственное значение.<br>Функции в JavaScript являются объектами, если точнее, то они являются объектами типа Function. Их ключевое отличие от обычных объектов, дающее им те исключительные возможности, которыми они обладают, заключается в том, что функции можно вызывать.<br>Кроме того, функции в JavaScript называют «<span style="font-style: italic;">функциями первого класса</span>» так как их можно назначать переменным, их можно передавать другим функциям в качестве аргументов, их можно возвращать из других функций.<br>Сначала рассмотрим особенности работы с функциями и соответствующие синтаксические конструкции, которые существовали в языке до появления стандарта ES6 и актуальны до сих пор.<br>Вот как выглядит объявление функции (function declaration).
+        </p>
+        <p class="u-align-center u-text u-text-custom-color-1 u-text-default u-text-3"> function&nbsp;​​ doSomething(foo) {&nbsp;<br>&nbsp;//сделать что-нибудь&nbsp;}
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-4"> В наши дни такие функции называют «обычными», отличая их от «стрелочных» функций, которые появились в ES6.<br>Функцию можно назначить переменной или константе. Такая конструкция называется функциональным выражением (function expression).
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-5"> const doSomething = function(foo) {&nbsp; &nbsp; &nbsp;&nbsp;<br>//сделать что-нибудь
+   }
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-6"> Можно заметить, что в вышеприведённом примере функция назначена константе, но сама она имени не имеет. Такие функции называют анонимными. Подобным функциям можно назначать имена. В таком случае речь идёт об именованном функциональном выражении (named function expression).</p>
+        <p class="u-align-center u-text u-text-default u-text-7"> const doSomething = function&nbsp; doSomFn(foo) {&nbsp; &nbsp; &nbsp;&nbsp;<br>//сделать что-нибудь
+   }
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-8"> Использование таких выражений повышает удобство отладки (в сообщениях об ошибках, где проводится трассировка стека, видно имя функции). Имя функции в функциональном выражении может понадобиться и для того, чтобы функция могла бы сама себя вызывать, без чего не обойтись при реализации рекурсивных алгоритмов.<br>В стандарте ES6 появились стрелочные функции (arrow function), которые особенно удобно использовать в виде так называемых «встроенных функций» (inline function) — в роли аргументов, передаваемых другим функциям (коллбэков).<br>
+          <br>
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-9"> const doSomething =&nbsp;foo =&gt; {&nbsp;<br>&nbsp;//сделать что-нибудь
+   }
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-10"> Стрелочные функции, помимо того, что структуры, используемые для их объявления, получаются более компактными, чем при использовании обычных функций, отличаются от них некоторыми важными особенностями, о которых мы поговорим ниже.</p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-11"> Параметры функций</h2>
+        <p class="u-align-center u-text u-text-default u-text-12"> Параметры представляют собой переменные, которые задаются на этапе объявления функции и будут содержать передаваемые ей значения (эти значения называют аргументами). Функции в JavaScript могут либо не иметь параметров, либо иметь один или несколько параметров.</p>
+        <p class="u-align-center u-text u-text-default u-text-13"> const doSomething = () =&gt; {&nbsp;<br>&nbsp;//сделать что-нибудь
+   }&nbsp;<br>
+          <br>const doSomethingElse = foo =&gt; {&nbsp;<br>&nbsp;//сделать что-нибудь
+   }&nbsp;<br>
+          <br>const doSomethingElseAgain = (foo, bar) =&gt; {&nbsp; &nbsp; &nbsp;&nbsp;<br>//сделать что-нибудь
+   }
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-14"> Здесь показано несколько примеров стрелочных функций.<br>Начиная со стандарта ES6 у функций могут быть так называемые «параметры по умолчанию» (default parameters).
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-15"> const doSomething = (foo = 1, bar = 'hey') =&gt; {&nbsp;<br>&nbsp;//сделать что-нибудь
+   }
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-16"> Они представляют собой стандартные значения, задаваемые параметрам функций в том случае, если при её вызове значения некоторых параметров не задаются. Например, функцию, показанную выше, можно вызвать как с передачей ей всех двух принимаемых ей параметров, так и другими способами.</p>
+        <p class="u-align-center u-text u-text-default u-text-17"> doSomething(3)<br>&nbsp; &nbsp; &nbsp;doSomething()
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-18"> Передаваемые функциям аргументы можно представлять в виде массивов. Для того чтобы разобрать эти аргументы можно воспользоваться оператором, который выглядит как три точки (это — так называемый «оператор расширения» или «оператор spread»). Вот как это выглядит.</p>
+        <p class="u-align-center u-text u-text-default u-text-19"> const doSomething = (foo = 1, bar = 'hey') =&gt; {&nbsp; &nbsp; &nbsp;&nbsp;<br>//сделать что-нибудь
+   }&nbsp;<br>const args = [2, 'ho!']&nbsp;<br>doSomething(...args)
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-20"> Если функции нужно принимать много параметров, то запомнить порядок их следования может быть непросто. В таких случаях используются объекты с параметрами и возможности по деструктурированию объектов ES6.</p>
+        <p class="u-align-center u-text u-text-default u-text-21"> const doSomething = ({ foo = 1, bar = 'hey' }) =&gt; {&nbsp; &nbsp; &nbsp;&nbsp;<br>//сделать что-нибудь&nbsp; &nbsp; &nbsp;&nbsp;<br>console.log(foo) // 2&nbsp;<br>&nbsp;console.log(bar) // 'ho!'
+   }&nbsp;<br>const args = { foo: 2, bar: 'ho!' }
+   doSomething(args)
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-22"> Этот приём позволяет, описывая параметры в виде свойств объекта и передавая функции объект, получить в функции доступ к параметрам по их именам без использования дополнительных конструкций. Подробнее об этом приёме можно почитать</p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-23"> Значения, возвращаемые из функций</h2>
+        <p class="u-align-center u-text u-text-default u-text-24"> Все функции возвращают некое значение. Если команда возврата явно не задана — функция возвратит&nbsp;<span class="u-text-palette-2-base">undefined</span>
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-25"> const doSomething = (foo = 1, bar = 'hey') =&gt; {&nbsp;<br>&nbsp;//сделать что-нибудь
+   }&nbsp;<br>console.log(doSomething())
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-26"> Выполнение функции завершается либо после того, как оказывается выполненным весь код, который она содержит, либо после того, как в коде встречается ключевое слово&nbsp;return&nbsp;. Когда в функции встречается это ключевое слово, её работа завершается, а управление передаётся в то место, откуда была вызвана функция.<br>Если после ключевого слова&nbsp;return&nbsp;указать некое значение, то это значение возвращается в место вызова функции в качестве результата выполнения этой функции.
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-27"> const doSomething = () =&gt; {&nbsp;<br>&nbsp;return 'test'
+   }&nbsp;<br>const result = doSomething() // result === 'test'
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-28"> Из функции можно возвращать лишь одно значение. Для того чтобы получить возможность возврата нескольких значений, возвращать их можно либо в виде объекта, используя объектный литерал, либо в виде массива, а при вызове функции применять конструкцию деструктурирующего присваивания. Имена параметров при этом сохраняются. При этом, если нужно работать с объектом или массивом, возвращённым из функции, именно в виде объекта или массива, можно обойтись без деструктурирующего присваивания.<br>
+          <br>
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-29"> const doSomething = () =&gt; {&nbsp;<br>&nbsp;return ['Roger', 6]
+   }<br>&nbsp; &nbsp; &nbsp; &nbsp; const [ name, age ] = doSomething()&nbsp;<br>console.log(name, age) //Roger 6
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-30"> Конструкцию&nbsp;<span class="u-text-palette-2-base">const [ name, age ] = doSomething()</span>&nbsp;можно прочитать следующим образом: «объявить константы&nbsp;<span class="u-text-palette-2-base">name</span>&nbsp;и&nbsp;<span class="u-text-palette-2-base">age</span>&nbsp;и присвоить им значения элементов массива, который возвратит функция». Вот как то же самое выглядит с использованием объекта.
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-31"> const doSomething = () =&gt; {&nbsp; &nbsp; &nbsp;&nbsp;<br>return {name: 'Roger', age: 6}
+   }<br>&nbsp; &nbsp; &nbsp; &nbsp; const { name, age } = doSomething()&nbsp;<br>console.log(name, age) //Roger 6
+        </p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-32"> Вложенные функции</h2>
+        <p class="u-align-center u-text u-text-default u-text-33"> Функции можно объявлять внутри других функций.</p>
+        <p class="u-align-center u-text u-text-default u-text-34"> const doSomething = () =&gt; {&nbsp; &nbsp; &nbsp;&nbsp;<br>const doSomethingElse = () =&gt; {}&nbsp; &nbsp; &nbsp;&nbsp;<br>doSomethingElse()
+    &nbsp;return 'test'
+   }&nbsp;<br>doSomething()
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-35"> Область видимости вложенной функции ограничена внешней по отношению к ней функцией, её нельзя вызвать извне.</p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-36"> Методы объектов</h2>
+        <p class="u-align-center u-text u-text-default u-text-37"> Когда функции используются в качестве свойств объектов, такие функции называют методами объектов.</p>
+        <p class="u-align-center u-text u-text-default u-text-38"> const car = {&nbsp;<br>&nbsp;brand: 'Ford',<br>&nbsp; &nbsp; &nbsp; model: 'Fiesta',<br>&nbsp; &nbsp; &nbsp; start: function() {&nbsp;<br>&nbsp; &nbsp;console.log(`Started`)<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; }&nbsp;<br>car.start()
+        </p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-39"> Ключевое слово this</h2>
+        <p class="u-align-center u-text u-text-default u-text-40"> Если сравнить стрелочные и обычные функции, используемые в качестве методов объектов, можно обнаружить их важное различие, заключающееся в смысле ключевого слова&nbsp;<span class="u-text-palette-2-base">this</span>&nbsp;. Рассмотрим пример.
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-41"> const car = {&nbsp;<br>&nbsp;brand: 'Ford',&nbsp;<br>&nbsp;model: 'Fiesta',<br>&nbsp; &nbsp; &nbsp; start: function() {&nbsp; &nbsp; &nbsp;&nbsp;<br>&nbsp; console.log(`Started ${this.brand} ${this.model}`)&nbsp;<br>&nbsp;},&nbsp;<br>&nbsp;stop: () =&gt; {&nbsp; &nbsp; &nbsp;&nbsp;<br>&nbsp; console.log(`Stopped ${this.brand} ${this.model}`)&nbsp;<br>&nbsp;}&nbsp;<br>}
+   car.start() //Started Ford Fiesta&nbsp;<br>car.stop() //Stopped undefined undefined
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-42"> Как видно, вызов метода&nbsp;<span class="u-text-palette-2-base">start()</span> Как видно, вызов метода&nbsp;приводит ко вполне ожидаемому результату, а вот метод&nbsp;<span class="u-text-palette-2-base">stop()</span>&nbsp;явно работает неправильно.<br>Происходит это из-за того, что ключевое слово&nbsp;<span class="u-text-palette-2-base">this</span>&nbsp;по-разному ведёт себя при его использовании в стрелочных и обычных функциях. А именно, ключевое слово в стрелочной функции содержит ссылку на контекст, включающий в себя функцию. В данном случае, если речь идёт о браузере, этим контекстом является объект в стрелочной функции содержит ссылку на контекст, включающий в себя функцию. В данном случае, если речь идёт о браузере, этим контекстом является объект&nbsp;<span class="u-text-palette-2-base">window</span>.<br>
+          <br>
+        </p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-43"> Немедленно вызываемые функциональные выражения</h2>
+        <p class="u-align-center u-text u-text-default u-text-44"> Немедленно вызываемое функциональное выражение (Immediately Invoked Function Expression, IIFE) — это функция, которая автоматически вызывается сразу после её объявления.</p>
+        <p class="u-align-center u-text u-text-default u-text-45"> ;(function () {&nbsp;<br>&nbsp;console.log('executed')<br>&nbsp; &nbsp; })()
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-46"> Точка с запятой перед IIFE необязательна, но её использование позволяет застраховаться от ошибок, связанных с автоматической расстановкой точек с запятой.<br>В вышеприведённом примере в консоль попадёт слово&nbsp;executed&nbsp;, после чего IIFE завершит работу. IIFE, точно так же как и другие функции, могут возвращать результаты своей работы.
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-47"> const something = (function () {&nbsp; &nbsp; &nbsp;&nbsp;<br>return 'IIFE'<br>&nbsp; &nbsp; })()&nbsp;<br>console.log(something)
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-48"> После выполнения этого простого примера в консоль попадёт строка&nbsp;IIFE&nbsp;, которая оказалась в константе&nbsp;something&nbsp;после выполнения немедленно вызываемого функционального выражения. Может показаться, что особой пользы от такой конструкции нет. Однако если в IIFE выполняются некие сложные вычисления, которые нужно выполнить лишь однажды, после чего соответствующие механизмы оказываются ненужными — полезность IIFE оказывается очевидной. А именно, при таком подходе после выполнения IIFE в программе будет доступен лишь возвращённый функцией результат. Кроме того, можно вспомнить, что функции способны возвращать другие функции и объекты. Речь идёт о замыканиях, о них мы поговорим ниже.</p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-49"> Поднятие функций</h2>
+        <p class="u-align-center u-text u-text-default u-text-50"> Перед выполнением JavaScript-кода производится его реорганизация. Мы уже говорили о механизме поднятия (hoisting) переменных, объявленных с использованием ключевого слова&nbsp;var&nbsp;. Похожий механизм действует и при работе с функциями. А именно, речь идёт о том, что объявления функций в ходе обработки кода перед его выполнением перемещаются в верхнюю часть их области видимости. В результате, например, оказывается, что вызвать функцию можно до её объявления.</p>
+        <p class="u-align-center u-text u-text-default u-text-51"> doSomething() //did something&nbsp;
+    function&nbsp; doSomething() {&nbsp; &nbsp; &nbsp; &nbsp;<br>console.log('did something')
+    }
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-52"> Если переместить вызов функции так, чтобы он шёл после её объявления, ничего не изменится.<br>Если же в похожей ситуации воспользоваться функциональным выражением, то похожий код выдаст ошибку.
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-53"> doSomething() //TypeError
+    var doSomething = function () {&nbsp;<br>&nbsp;console.log('did something')<br>&nbsp; &nbsp; &nbsp;}
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-54"> В данном случае оказывается, что хотя объявление переменной&nbsp;doSomething&nbsp;и поднимается в верхнюю часть области видимости, это не относится к операции присваивания. Если вместо&nbsp;var&nbsp;в похожей ситуации использовать ключевые слова&nbsp;let&nbsp;или&nbsp;const&nbsp;, такой код тоже работать не будет, правда, система выдаст другое сообщение об ошибке (ReferenceError&nbsp;а не&nbsp;TypeError&nbsp;), так как при использовании&nbsp;let&nbsp;и&nbsp;const&nbsp;объявления переменных и констант не поднимаются.</p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-55"> Стрелочные функции</h2>
+        <p class="u-align-center u-text u-text-default u-text-56"> Сейчас мы подробнее поговорим о стрелочных функциях, с которыми мы уже встречались. Их можно считать одним из наиболее значительных новшеств стандарта ES6, они отличаются от обычных функций не только внешним видом, но и особенностями поведения. В наши дни они используются чрезвычайно широко. Пожалуй, нет ни одного современного проекта, где они не использовались бы в подавляющем большинстве случаев. Можно сказать, что их появление навсегда изменило и внешний вид JS-кода и особенности его работы.<br>С чисто внешней точки зрения синтаксис объявления стрелочных функций оказывается компактнее синтаксиса обычных функций. Вот объявление обычной функции.
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-57"> const myFunction = function () {<br>&nbsp; &nbsp; &nbsp; //...
+   }
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-58"> Вот объявление стрелочной функции, которое, в целом, если не учитывать особенности стрелочных функций, аналогично предыдущему.</p>
+        <p class="u-align-center u-text u-text-default u-text-59"> const myFunction = () =&gt; {&nbsp;<br>&nbsp;//...
+   }
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-60"> Если тело стрелочной функции содержит лишь одну команду, результат которой возвращает эта функция, его можно записать без фигурных скобок и без ключевого слова&nbsp;return&nbsp;. Например, такая функция возвращает сумму переданных ей аргументов.</p>
+        <p class="u-align-center u-text u-text-default u-text-61"> const myFunction = (a,b) =&gt; a + b
+    console.log(myFunction(1,2)) //3</p>
+        <p class="u-align-center u-text u-text-default u-text-62"> Как видите, параметры стрелочных функций, как и в случае с обычными функциями, описывают в скобках. При этом, если такая функция принимает всего один параметр, его можно указать без скобок. Например, вот функция, которая возвращает результат деления переданного ей числа на 2.</p>
+        <p class="u-align-center u-text u-text-default u-text-63"> const myFunction = a =&gt; a / 2
+    console.log(myFunction(8)) //4</p>
+        <p class="u-align-center u-text u-text-default u-text-64"> В результате оказывается, что стрелочные функции очень удобно использовать в ситуациях, в которых нужны маленькие функции.</p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-65"> Неявный возврат результатов работы функции</h2>
+        <p class="u-align-center u-text u-text-default u-text-66"> Мы уже касались этой особенности стрелочных функций, но она настолько важна, что её следует обсудить подробнее. Речь идёт о том, что однострочные стрелочные функции поддерживают неявный возврат результатов своей работы. Пример возврата примитивного значения из однострочной стрелочной функции мы уже видели. Как быть, если такая функция должна возвратить объект? В таком случае фигурные скобки объектного литерала могут запутать систему, поэтому в теле функции используются круглые скобки.</p>
+        <p class="u-align-center u-text u-text-default u-text-67"> const myFunction = () =&gt; ({value: 'test'})&nbsp;<br>const obj = myFunction()<br>&nbsp; &nbsp; &nbsp; console.log(obj.value) //test
+        </p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-68"> Ключевое слово this и стрелочные функции</h2>
+        <p class="u-align-center u-text u-text-default u-text-69"> Выше, когда мы рассматривали особенности ключевого слова&nbsp;this&nbsp;, мы сравнивали обычные и стрелочные функции. Этот раздел призван обратить ваше внимание на важность их различий. Ключевое слово&nbsp;this&nbsp;, само по себе, может вызывать определённые сложности, так как оно зависит и от контекста выполнения кода, и от того, включен или нет строгий режим (strict mode).<br>Как мы уже видели, при использовании ключевого слова&nbsp;this&nbsp;в методе объекта, представленного обычной функцией,&nbsp;this&nbsp;указывает на объект, которому принадлежит метод. В таком случае говорят о привязке ключевого слова&nbsp;this&nbsp;к значению, представляющему собой контекст выполнения функции. В частности, если функция вызвана в виде метода объекта, то ключевое слово&nbsp;this&nbsp;привязано к этому объекту.<br>В случае же со стрелочными функциями оказывается так, что в них привязка&nbsp;this&nbsp;не выполняется, они пользуются ключевым словом&nbsp;this&nbsp;из содержащих их областей видимости. В результате их не рекомендуется использовать в качестве методов объектов.<br>Та же самая проблема возникает и при использовании функций в качестве обработчиков событий элементов DOM. Например, HTML-элемент&nbsp;button&nbsp;используют для описания кнопок. Событие&nbsp;click&nbsp;вызывается при щелчке мышью по кнопке. Для того чтобы отреагировать на это событие в коде, нужно сначала получить ссылку на соответствующий элемент, а потом назначить ему обработчик события&nbsp;click&nbsp;в виде функции. В качестве такого обработчика можно использовать и обычную функцию, и стрелочную. Но, если в обработчике событий нужно обращаться к тому элементу, для которого оно вызвано (то есть — к&nbsp;this), стрелочная функция тут не подойдёт, так как доступное в ней значение&nbsp;this&nbsp;указывает на объект&nbsp;window. Для того чтобы проверить это на практике, создайте HTML-страницу, код которой показан ниже, и понажимайте на кнопки.
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-70"> &lt;!DOCTYPE html&gt;<br>&nbsp; &nbsp; &nbsp;&lt;html&gt;&nbsp;<br>&nbsp;&lt;body&gt;&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;button id="fn"&gt;Function&lt;/button&gt;&nbsp;<br>&nbsp; &nbsp;&lt;button id="arrowFn"&gt;Arrow function&lt;/button&gt;&nbsp;<br>&nbsp; &nbsp;&lt;script&gt;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const f = document.getElementById("fn")&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; f.addEventListener('click', function () {&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; alert(this === f)&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>&nbsp; &nbsp;})&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp;const af = document.getElementById("arrowFn")&nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; af.addEventListener('click', () =&gt; {&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; alert(this === window)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; })&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>&nbsp;&lt;/script&gt;&nbsp;<br>&nbsp;&lt;/body&gt; <br>&lt;/html&gt;
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-71"> В данном случае при нажатии на эти кнопки будут появляться окна, содержащие&nbsp;true&nbsp;. Однако в обработчике события&nbsp;click&nbsp;кнопки с идентификатором&nbsp;fn&nbsp;проверяется равенство&nbsp;this&nbsp;самой кнопке, а в кнопке с идентификатором&nbsp;arrowFn&nbsp;проверяется равенство&nbsp;this&nbsp;и объекта&nbsp;window.<br>В результате, если в обработчике события HTML-элемента нужно обращаться к&nbsp;this, стрелочная функция для оформления такого обработчика не подойдёт.
+        </p>
+        <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-default u-text-72"> Замыкания</h2>
+        <p class="u-align-center u-text u-text-default u-text-73"> Замыкания — это важная концепция в JavaScript. Фактически, если вы писали JS-функции, то вы пользовались и замыканиями. Замыкания применяются в некоторых паттернах проектирования — в том случае, если нужно организовать строгий контроль доступа к неким данным или функциям.<br>Когда функция вызывается, у неё есть доступ ко всему тому, что находится во внешней по отношению к ней области видимости. Но к тому, что объявлено внутри функции, извне доступа нет. То есть, если в функции была объявлена некая переменная (или другая функция), они недоступны внешнему коду ни во время выполнения функции, ни после завершения её работы. Однако если из функции возвратить другую функцию, то эта новая функция будет иметь доступ ко всему тому, что было объявлено в исходной функции. При этом всё это будет скрыто от внешнего кода в замыкании.<br>Рассмотрим пример. Вот функция, которая принимает имя собаки, после чего выводит его в консоль.
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-74"> const bark = dog =&gt; {&nbsp;<br>&nbsp;const say = `${dog} barked!`&nbsp; &nbsp; &nbsp;&nbsp;;<br>(() =&gt; <br>console.log(say))()<br>&nbsp; &nbsp; }
+   bark(`Roger`) // Roger barked!
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-75"> Значение, возвращаемое этой функцией нас пока не интересует, текст выводится в консоль с помощью IIFE, что в данном случае особой роли не играет, однако, это поможет нам увидеть связь между этой функцией и её вариантом, в котором, вместо вызова функции, которая выводит текст в консоль, мы эту функцию из переписанной функции&nbsp;bark()&nbsp;возвратим.</p>
+        <p class="u-align-center u-text u-text-default u-text-76"> const prepareBark = dog =&gt; {&nbsp;<br>&nbsp;const say = `${dog} barked!`&nbsp;<br>&nbsp;return () =&gt; console.log(say)&nbsp;<br>}
+   const bark = prepareBark(`Roger`)<br>&nbsp; &nbsp; bark() // Roger barked!
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-77"> Результат работы код в двух случаях оказывается одинаковым. Но во втором случае то, что было передано исходной функции при её вызове (имя собаки,&nbsp;Roger&nbsp;), хранится в замыкании, после чего используется другой функцией, возвращённой из исходной.<br>Проведём ещё один эксперимент — создадим, пользуясь исходной функцией, две новых, для разных собак.
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-78"> const prepareBark = dog =&gt; {&nbsp;<br>&nbsp;const say = `${dog} barked!`&nbsp; &nbsp; &nbsp;&nbsp;<br>return () =&gt; {
+    &nbsp;&nbsp;&nbsp;console.log(say)<br>&nbsp; &nbsp; &nbsp; }&nbsp;<br>}<br>&nbsp; &nbsp; const rogerBark = prepareBark(`Roger`)&nbsp;<br>const sydBark = prepareBark(`Syd`)
+   rogerBark()
+   sydBark()
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-79"> Этот код выведет следующее.<br>Roger barked!<br>&nbsp; &nbsp; &nbsp;Syd barked!
+        </p>
+        <p class="u-align-center u-text u-text-default u-text-80"> Оказывается, что значение константы&nbsp;say&nbsp;привязано к функции, которая возвращена из функции&nbsp;prepareBark()<br>Обратите внимание на то, что&nbsp;say, при повторном вызове&nbsp;prepareBark(), получает новое значение, при этом значение, записанное в&nbsp;say&nbsp;при первом вызове&nbsp;prepareBark(), не меняется. Речь идёт о том, что при каждом вызове этой функции создаётся новое замыкание.
+        </p>
+      </div>
+    </section>
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-0810"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Демо-версия сайта. Планируются доработки.</p>
+      </div></footer>
+    
+  
+</body></html>
